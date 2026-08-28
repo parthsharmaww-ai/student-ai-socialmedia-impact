@@ -1,4 +1,3 @@
-```markdown
 # AI & Social Media Impact: Student Health & Grades
 
 How AI & Social Media affecting student's health and their grades?

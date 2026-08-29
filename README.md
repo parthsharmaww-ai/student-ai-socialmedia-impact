@@ -14,7 +14,7 @@ The data contains 15,000 records of students. The record contains 14 columns whi
 
 ## Methodology
 
-This project uses correlational analysis and hypothesis testing (Pearson/Spearman correlation, t-tests) to examine relationships between variables, rather than building a predictive model.
+This project uses correlational analysis and hypothesis testing (Pearson/Spearman correlation, t-tests) to examine relationships between variables, rather than building a predictive model. Data inspection revealed no cleaning was required.
 
 ## Tools & Technologies
 
@@ -25,12 +25,17 @@ This project uses correlational analysis and hypothesis testing (Pearson/Spearma
 - Jupyter
 
 ## Project Structure
-
-- data -> it contains data used in the project
-- notebooks -> it contains jupyter notebooks of the project
-- output -> it contains the various results and visualizations of the project
-
+```
+student-ai-socialmedia-impact/
+├── data/
+│   └── AI_SocialMedia_Student_Health_Dataset_clean.csv   # raw dataset from Kaggle
+├── notebooks/
+│   └── 01_data_inspection_and_cleaning.ipynb             # inspection + cleaning conclusion
+├── output/                                               # (empty for now — will hold charts/results)
+├── README.md
+└── .gitignore
+```
 ## Status
 
-In progress - data cleaning stage
+In progress - data cleaned
 

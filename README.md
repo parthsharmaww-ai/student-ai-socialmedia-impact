@@ -16,6 +16,23 @@ The data contains 15,000 records of students. The record contains 14 columns whi
 
 This project uses correlational analysis and hypothesis testing (Pearson/Spearman correlation, t-tests) to examine relationships between variables, rather than building a predictive model. Data inspection revealed no cleaning was required.
 
+## Hypotheses
+
+### Confirmatory (predicted in advance, with reasoning)
+
+- **H1:** Higher daily social media hours is associated with lower sleep hours.
+  Rationale: nighttime social media usage displaces time that would otherwise go toward sleep.
+
+- **H2:** Higher daily social media hours is associated with worsening mental health score.
+  Rationale: heavy nighttime usage and comparison culture are linked to increased anxiety.
+
+- **H3:** Higher daily AI tool usage hours is associated with worsening academic performance score.
+  Rationale: cognitive offloading — relying on AI to do the thinking may reduce independent learning and practice.
+
+### Exploratory (tested without a predicted direction)
+
+All remaining Daily_Social_Media_Hours / Daily_AI_Tool_Usage_Hours pairings against the other outcome variables (Physical_Activity_Hours, Physical_Health_Score, Social_Isolation_Score, Burnout_Level, Academic_Performance_Score, Academic_Failure_Risk, and Sleep_Hours/Mental_Health_Score for the untested IV) are tested exploratorily, without a predicted direction, to see what patterns emerge. Given the number of tests run, any significant results here are treated as suggestive rather than confirmed, due to the increased chance of false positives across multiple comparisons.
+
 ## Tools & Technologies
 
 - Python

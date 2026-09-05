@@ -42,17 +42,19 @@ All remaining Daily_Social_Media_Hours / Daily_AI_Tool_Usage_Hours pairings agai
 - Jupyter
 
 ## Project Structure
-```
+
 student-ai-socialmedia-impact/
 ├── data/
-│   └── AI_SocialMedia_Student_Health_Dataset_clean.csv   # raw dataset from Kaggle
+│ ├── AI_SocialMedia_Student_Health_Dataset_clean.csv # raw dataset from Kaggle
+│ └── cleaned_student_data.csv # post-inspection version (Academic_Failure_Risk cast to bool)
 ├── notebooks/
-│   └── 01_data_inspection_and_cleaning.ipynb             # inspection + cleaning conclusion
-├── output/                                               # (empty for now — will hold charts/results)
+│ ├── 01_data_inspection_and_cleaning.ipynb # inspection + cleaning conclusion, dtype fix, saves cleaned_student_data.csv
+│ └── 02_hypothesis_testing.ipynb # normality checks + hypothesis tests
+├── output/ # (empty for now — will hold charts/results)
 ├── README.md
 └── .gitignore
-```
+
+
 ## Status
 
-In progress - data cleaned
-
+In progress - hypothesis testing stage

@@ -1,6 +1,4 @@
-# AI & Social Media Impact: Student Health & Grades
-
-How AI & Social Media affecting student's health and their grades?
+# AI & Social Media Impact on Student Health & Grades — Final Report
 
 ## Problem Statement
 
@@ -10,28 +8,23 @@ As a data science student, I've observed the rapid rise of AI tools and increasi
 
 [Kaggle: AI and Social Media Impact on Student Health and Grades](https://www.kaggle.com/datasets/debayank2024/ai-and-social-media-impact-student-health-and-grades?resource=download)
 
-The data contains 15,000 records of students. The record contains 14 columns which gives us the student id, age, gender, education level, daily social media hours, daily AI usage hours, sleep hours, physical activity hours, mental health score, physical health score, social isolation score, burnout level, academic performance score and academic failure risk.
+The data contains 15,000 records of students across 14 columns: student id, age, gender, education level, daily social media hours, daily AI usage hours, sleep hours, physical activity hours, mental health score, physical health score, social isolation score, burnout level, academic performance score, and academic failure risk.
 
 ## Methodology
 
-This project uses correlational analysis and hypothesis testing (Pearson/Spearman correlation, t-tests) to examine relationships between variables, rather than building a predictive model. Data inspection revealed no cleaning was required.
+This project uses correlational analysis and hypothesis testing (Spearman correlation, Kruskal-Wallis, Mann-Whitney U) to examine relationships between variables, rather than building a predictive model. Data inspection revealed no cleaning was required. Normality testing (Shapiro-Wilk, supported by histogram inspection) determined that Spearman correlation was appropriate over Pearson for all continuous-continuous pairs, due to non-normal distributions (spike-at-zero and ceiling-effect patterns) in most variables.
 
 ## Hypotheses
 
 ### Confirmatory (predicted in advance, with reasoning)
 
 - **H1:** Higher daily social media hours is associated with lower sleep hours.
-  Rationale: nighttime social media usage displaces time that would otherwise go toward sleep.
-
 - **H2:** Higher daily social media hours is associated with worsening mental health score.
-  Rationale: heavy nighttime usage and comparison culture are linked to increased anxiety.
-
 - **H3:** Higher daily AI tool usage hours is associated with worsening academic performance score.
-  Rationale: cognitive offloading — relying on AI to do the thinking may reduce independent learning and practice.
 
 ### Exploratory (tested without a predicted direction)
 
-All remaining Daily_Social_Media_Hours / Daily_AI_Tool_Usage_Hours pairings against the other outcome variables (Physical_Activity_Hours, Physical_Health_Score, Social_Isolation_Score, Burnout_Level, Academic_Performance_Score, Academic_Failure_Risk, and Sleep_Hours/Mental_Health_Score for the untested IV) are tested exploratorily, without a predicted direction, to see what patterns emerge. Given the number of tests run, any significant results here are treated as suggestive rather than confirmed, due to the increased chance of false positives across multiple comparisons.
+All remaining Daily_Social_Media_Hours / Daily_AI_Tool_Usage_Hours pairings against the other outcome variables were tested exploratorily, without a predicted direction. Given the number of tests run, significant results here are treated as suggestive rather than confirmed, due to the increased chance of false positives across multiple comparisons.
 
 ## Findings & Conclusions
 
@@ -45,7 +38,7 @@ Across the three confirmatory hypotheses, daily social media hours showed a cons
 - Social media hours rose in a clear step-wise pattern across burnout levels: Low≈3.5 hrs → Moderate≈5.5 → High≈6.8 → Severe≈8.2 hrs.
 - Students flagged with academic failure risk reported notably higher daily social media hours (≈7.6) than those without (≈4.33).
 
-## Limitations
+### Limitations
 
 - **Correlational design:** This project uses correlational analysis, which can show that two variables move together but cannot establish that one causes the other. Alternative explanations remain possible — for example, reverse causation (struggling students may turn to more social media use, rather than social media use causing the struggle) or a third, unmeasured factor influencing both variables at once.
 
@@ -55,7 +48,7 @@ Across the three confirmatory hypotheses, daily social media hours showed a cons
 
 - **Dataset origin:** The dataset's unusually clean state — zero missing values, zero duplicate rows, and a filename indicating it was pre-cleaned — makes it impossible to verify whether it reflects real student responses, a cleaned version of real data, or entirely synthetic data generated to resemble realistic patterns.
 
-## Practical Implications
+### Practical Implications
 
 Based on these findings, students may benefit from monitoring their daily social media use, given its consistent association with lower sleep hours, lower mental health scores, and lower academic performance scores. Daily AI tool usage appears less consistently linked to negative outcomes — light usage (roughly under 2–2.5 hours a day) was associated with a slight improvement in academic performance, while usage beyond that threshold was associated with a decline. This suggests AI tools are not inherently harmful in moderation, but heavier reliance may carry the same kind of risk associated with excessive social media use.
 
@@ -63,26 +56,4 @@ These implications are drawn from correlational evidence and should be read as p
 
 ## Tools & Technologies
 
-- Python
-- Pandas
-- Sklearn
-- Statsmodels
-- Jupyter
-
-## Project Structure
-
-student-ai-socialmedia-impact/
-├── data/
-│ ├── AI_SocialMedia_Student_Health_Dataset_clean.csv # raw dataset from Kaggle
-│ └── cleaned_student_data.csv # post-inspection version (Academic_Failure_Risk cast to bool)
-├── notebooks/
-│ ├── 01_data_inspection_and_cleaning.ipynb # inspection + cleaning conclusion, dtype fix, saves cleaned_student_data.csv
-│ └── 02_hypothesis_testing.ipynb # normality checks, hypothesis tests, visualizations
-├── output/ # (empty for now — will hold charts/results)
-├── README.md
-└── .gitignore
-
-
-## Status
-
-In progress - project done
+- Python, Pandas, Scipy, Statsmodels, Seaborn/Matplotlib, Jupyter

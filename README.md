@@ -57,4 +57,4 @@ student-ai-socialmedia-impact/
 
 ## Status
 
-In progress - hypothesis testing stage
+In progress - visualization complete, moving to final write-up and conclusions
